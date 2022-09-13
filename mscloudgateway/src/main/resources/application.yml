@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: mscloudgateway
+  config:
+    import: optional:configserver:http://localhost:8888
+  cloud:
+    config:
+      profile: default
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+eureka:
+  client:
+    fetch-registry: true
+    resiter-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
